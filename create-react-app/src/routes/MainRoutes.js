@@ -8,11 +8,14 @@ import Loadable from 'ui-component/Loadable';
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
 
 // utilities routing
-const UtilsTypography = Loadable(lazy(() => import('views/utilities/Typography')));
+const Clientes = Loadable(lazy(() => import('views/utilities/Clientes')));
 const UtilsColor = Loadable(lazy(() => import('views/utilities/Color')));
 const UtilsShadow = Loadable(lazy(() => import('views/utilities/Shadow')));
 const UtilsMaterialIcons = Loadable(lazy(() => import('views/utilities/MaterialIcons')));
 const UtilsTablerIcons = Loadable(lazy(() => import('views/utilities/TablerIcons')));
+const Usuarios = Loadable(lazy(() => import('views/servicios/Usuarios')));
+const Menus = Loadable(lazy(() => import('views/utilities/Menus')));
+const Encuestas = Loadable(lazy(() => import('views/utilities/Encuestas')));
 
 // sample page routing
 const SamplePage = Loadable(lazy(() => import('views/sample-page')));
@@ -37,14 +40,42 @@ const MainRoutes = {
       ]
     },
     {
-      path: 'utils',
+      path: 'usuarios',
       children: [
         {
-          path: 'util-typography',
-          element: <UtilsTypography />
+          path: 'default',
+          element: <Usuarios />
         }
       ]
     },
+    {
+      path: 'utils',
+      children: [
+        {
+          path: 'Encuestas',
+          element: <Encuestas />
+        }
+      ]
+    },
+    {
+      path: 'utils',
+      children: [
+        {
+          path: 'menus',
+          element: <Menus />
+        }
+      ]
+    },
+    {
+      path: 'utils',
+      children: [
+        {
+          path: 'clientes',
+          element: <Clientes />
+        }
+      ]
+    },
+    
     {
       path: 'utils',
       children: [
