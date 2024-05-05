@@ -1,0 +1,26 @@
+{
+  "name": "backend_rest",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chai": "^5.1.0",
+    "chai-http": "^4.4.0",
+    "express": "^4.19.2",
+    "mocha": "^10.4.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}

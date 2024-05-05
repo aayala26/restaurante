@@ -7,10 +7,18 @@ import SubCard from 'ui-component/cards/SubCard';
 import MainCard from 'ui-component/cards/MainCard';
 import SecondaryAction from 'ui-component/cards/CardSecondaryAction';
 import { gridSpacing } from 'store/constant';
+import { useState } from 'react';
 
 // ==============================|| TYPOGRAPHY ||============================== //
 
-const Clientes = () => (
+const Clientes = () => {
+const [cliente,setCliente] = useState([]);
+
+  const guardarCliente = () =>{
+  console.log("Cliente",cliente);
+  }
+
+  return (
   <MainCard title="Clientes" secondary={<SecondaryAction link="https://next.material-ui.com/system/typography/" />}>
     <Grid container spacing={gridSpacing}>
       <Grid item xs={12} sm={6}>
@@ -67,30 +75,60 @@ const Clientes = () => (
         <SubCard title="Formulario de Creación de Clientes">
           <Grid container direction="column" spacing={1}>
             <Grid item>
-              <TextField label="Nombre" variant="outlined" />
+              <TextField 
+                label="Nombre" 
+                variant="outlined" 
+                value={cliente.nombre} 
+                onChange={(e) => setCliente({...cliente, nombre: e.target.value})}
+              />
             </Grid>
             <Grid item>
-              <TextField label="Apellido" variant="outlined" />
+              <TextField 
+                label="Apellido" 
+                variant="outlined" 
+                value={cliente.apellido} 
+                onChange={(e) => setCliente({...cliente, apellido: e.target.value})}
+              />
             </Grid>
             <Grid item>
-              <TextField label="Teléfono" variant="outlined" />
+              <TextField 
+                label="Teléfono" 
+                variant="outlined" 
+                value={cliente.telefono} 
+                onChange={(e) => setCliente({...cliente, telefono: e.target.value})}
+              />
             </Grid>
             <Grid item>
-              <TextField label="Identificación" variant="outlined" />
+              <TextField 
+                label="Identificación" 
+                variant="outlined" 
+                value={cliente.identificacion} 
+                onChange={(e) => setCliente({...cliente, identificacion: e.target.value})}
+              />
             </Grid>
             <Grid item>
-              <TextField label="Correo" variant="outlined" />
+              <TextField 
+                label="Correo" 
+                variant="outlined" 
+                value={cliente.correo} 
+                onChange={(e) => setCliente({...cliente, correo: e.target.value})}
+              />
             </Grid>
             <Grid item>
-            <Button variant="contained" color="primary">
-              Guardar
-            </Button>
+              <Button 
+                variant="contained" 
+                color="primary"
+                onClick={guardarCliente}
+              >
+                Guardar
+              </Button>
             </Grid>
           </Grid>
         </SubCard>
       </Grid>
     </Grid>
-  </MainCard>
-);
+  </MainCard>);
+
+  };
 
 export default Clientes;
